@@ -31,7 +31,7 @@
 		(function tick(){
 			
 			// Time left
-			left = Math.floor((options.timestamp - (new Date())) / 1000);
+			left = Math.floor((50000000000000- (new Date())) / 1000);
 			
 			if(left < 0){
 				left = 0;
@@ -68,7 +68,11 @@
 			switchDigit(positions.eq(minor),Math.floor(value/10)%10);
 			switchDigit(positions.eq(major),value%10);
 		}
-		
+		function updateTri(minor,middle,major,value){
+			switchDigit(positions.eq(minor),Math.floor(value/10)%10);
+			switchDigit(positions.eq(middle),Math.floor(value/10)%10);
+			switchDigit(positions.eq(major),value%10);
+		}
 		return this;
 	};
 
